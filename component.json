@@ -5,6 +5,6 @@
   "version": "0.0.1",
   "keywords": ["validate", "email", "disposable", "domains"],
   "license": "MIT",
-  "json": ["index.json"],
+  "files": ["index.json"],
   "scripts": ["index.js"]
 }
