@@ -6,5 +6,5 @@
   "keywords": ["validate", "email", "disposable", "domains"],
   "license": "MIT",
   "json": ["index.json"],
-  "main": "index.json"
+  "scripts": ["index.js"]
 }
