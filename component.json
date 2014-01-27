@@ -1,0 +1,9 @@
+{
+  "name": "disposable-email-domains",
+  "repo": "ivolo/disposable-email-domains",
+  "description": "Get a list of disposable email domains.",
+  "version": "0.0.1",
+  "keywords": ["validate", "email", "disposable", "domains"],
+  "license": "MIT",
+  "json": ["index.json"]
+}
