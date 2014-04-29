@@ -1,0 +1,13 @@
+{
+    "name": "ivolo/disposable-email-domains",
+    "description": "disposable domains list",
+    "keywords": ["disposable", "domains"],
+    "license": "MIT",
+    "authors": [
+        {
+        	"name": "Ilya Volodarsky",
+        	"email": "ivolodarsky@gmail.com",
+        	"role": "Maintainer"
+        }
+    ] 
+}
