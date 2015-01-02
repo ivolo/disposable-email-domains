@@ -1,6 +1,6 @@
 {
   "name": "disposable-email-domains",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "repository": "https://github.com/ivolo/disposable-email-domains.git",
   "license": "MIT",
   "main": "./index.json"
