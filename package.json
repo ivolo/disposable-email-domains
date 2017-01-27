@@ -3,5 +3,13 @@
   "version": "1.0.15",
   "repository": "https://github.com/ivolo/disposable-email-domains.git",
   "license": "MIT",
-  "main": "./index.json"
+  "main": "./index.json",
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "devDependencies": {
+    "async": "^2.0.1",
+    "legit": "0.0.5",
+    "mocha": "^3.0.2"
+  }
 }
