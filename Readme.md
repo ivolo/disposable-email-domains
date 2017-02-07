@@ -28,9 +28,9 @@ $ component install ivolo/disposable-email-domains
 
 ## Contributing
 
-Add new disposable domains in the [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json).
+Add new disposable domains in the [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) in alphabetical order and lowercase. Please run `mocha` before creating a Pull Request to ensure all tests are passing.
 
-## Licence
+## License
 
 ```
 WWWWWW||WWWWWW
