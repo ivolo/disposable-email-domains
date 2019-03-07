@@ -1,6 +1,6 @@
 # disposable-email-domains
 
-A list of [disposable email domains](http://en.wikipedia.org/wiki/Disposable_email_address) like `mailinator.com`. You can use it to detect or block disposable accounts in your signup process. Exact domain matches are found in [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard domains (ex: `*.33mail.com`) are in [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json).
+A list of [disposable email domains](http://en.wikipedia.org/wiki/Disposable_email_address) like `mailinator.com`. You can use it to detect or block disposable accounts in your signup process. Exact domain matches are found in [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard domains (ex: `*.33mail.com`) are in [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json). A list of legitimate email providers is also included in [whitelist.json](https://github.com/ivolo/disposable-email-domains/blob/master/whitelist.json).
 
 # Examples
 
@@ -33,7 +33,7 @@ $ component install ivolo/disposable-email-domains
 
 # Contributing
 
-Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json). Contributions should be in alphabetical order and lowercase. Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
+Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json) and legitimate email providers to [whitelist.json](https://github.com/ivolo/disposable-email-domains/blob/master/whitelist.json). Contributions should be in alphabetical order and lowercase. Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
 
 # License
 
