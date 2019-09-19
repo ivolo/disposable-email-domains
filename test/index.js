@@ -1,6 +1,5 @@
 const _ = require('lodash');
 const domains = require('../index');
-const wildcard = require('../wildcard');
 const chai = require('chai');
 const expect = chai.expect;
 
