@@ -8,23 +8,23 @@ chai.use(require("chai-sorted"));
 chai.use(require('./helpers/lowercase'));
 chai.use(require('./helpers/isFQDN'));
 
-describe('Domains', function(){
+describe('Wildcard domains', function(){
   it('should be an array', function(){
-    expect(domains).to.be.a('array');
+    expect(wildcard).to.be.a('array');
   });
   it('should have at least one domain', function(){
-    expect(domains).to.have.length.above(0);
+    expect(wildcard).to.have.length.above(0);
   });
   it('should be in alphabetical order', function(){
-    expect(domains).to.be.sorted();
+    expect(wildcard).to.be.sorted();
   });
   it('should not have duplicates', function(){
-    expect(domains).to.deep.equal(_.uniq(domains));
+    expect(wildcard).to.deep.equal(_.uniq(wildcard));
   });
   it('should be lowercase', function(){
-    expect(domains).to.be.all.lowercase;
+    expect(wildcard).to.be.all.lowercase;
   });
   it('should be a valid domain', function(){
-    expect(domains).to.be.all.isFQDN;
+    expect(wildcard).to.be.all.isFQDN;
   });
 });
