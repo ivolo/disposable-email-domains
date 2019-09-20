@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const domains = require('../index');
+const domains = require('../wildcard');
 const chai = require('chai');
 const expect = chai.expect;
 
@@ -7,7 +7,7 @@ chai.use(require("chai-sorted"));
 chai.use(require('./helpers/lowercase'));
 chai.use(require('./helpers/isFQDN'));
 
-describe('Domains', function(){
+describe('Wildcard domains', function(){
   it('should be an array', function(){
     expect(domains).to.be.a('array');
   });
