@@ -6,7 +6,8 @@
   "main": "./index.json",
   "scripts": {
     "test": "mocha || true",
-    "sort": "node sort.js"
+    "add": "node add.js",
+    "prod": "node add.js && mocha || true"
   },
   "devDependencies": {
     "chai": "^3.5.0",

@@ -33,7 +33,14 @@ $ component install ivolo/disposable-email-domains
 
 # Contributing
 
-Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json). All contributions must be lowercase and in alphabetical order. Run `npm run sort` to ensure both lists are sorted. Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
+Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json).  
+
+To easily add new domains, insert them into [index.txt](https://github.com/ivolo/disposable-email-domains/blob/master/contributions/index.txt) and/or [wildcard.txt](https://github.com/ivolo/disposable-email-domains/blob/master/contributions/wildcard.txt) and run `npm run add`.  
+The domains will be added to the respective files and some validation will be made to ensure they pass the tests.
+
+Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
+
+You can also run `npm run prod` to add new domains and run the tests at the same time.
 
 # License
 
