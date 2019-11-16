@@ -23,7 +23,7 @@ class Domain
         $domain = static::getDomain($email);
 
         if (null === static::$wildcard) {
-            static::$wildcard = json_decode(file_get_contents(__DIR__ . '/../wildcard.json')) ?: [];
+            static::$wildcard = static::loadJsonFile('wildcard');
         }
 
         foreach (static::$wildcard as $word) {
@@ -45,9 +45,21 @@ class Domain
         $domain = static::getDomain($email);
 
         if (null === static::$disposable) {
-            static::$disposable = array_flip(json_decode(file_get_contents(__DIR__ . '/../index.json')) ?: []);
+            static::$disposable = array_flip(static::loadJsonFile('index'));
         }
 
         return isset(static::$disposable[$domain]);
+    }
+
+    private static function loadJsonFile(string $name): array
+    {
+        $file = __DIR__ . "/../$name.json";
+        $data = json_decode(file_get_contents($file), true) ?: [];
+
+        if (json_last_error() === JSON_ERROR_NONE) {
+            return $data;
+        }
+
+        throw new \InvalidArgumentException('The given file does not contain valid json data');
     }
 }
