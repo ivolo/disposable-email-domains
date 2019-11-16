@@ -12,6 +12,20 @@ var wildcards = require('disposable-email-domains/wildcard.json');
 // ... your code here
 ```
 
+## PHP
+```php
+use Ivolo\DisposableEmail\Domain;
+
+Domain::isDisposable('hi@mailinator.com');  // true
+Domain::isDisposable('hi@cko.kr');          // true
+Domain::isDisposable('hi@x.cko.kr');        // true
+Domain::isDisposable('hi@xcko.kr');         // false
+
+// To disable wildcard checks:
+Domain::isDisposable('hi@x.cko.kr', false);        // false
+Domain::isDisposable('hi@mailinator.com', false);  // true
+```
+
 ## API
 
 An always-up-to-date version of this repo is provided as an API by [Kickbox](https://kickbox.com/). Issuing a `GET` request to https://open.kickbox.com/v1/disposable/{DomainOrEmailAddress} will return `{"disposable":true}` or `{"disposable":false}` as a JSON response.
@@ -24,11 +38,16 @@ https://open.kickbox.com/v1/disposable/mailinator.com
 
 # Installation
   
-```
+```sh
 $ npm install disposable-email-domains
 ```
-```
+```sh
 $ component install ivolo/disposable-email-domains
+```
+
+For usage in PHP projects:
+```sh
+$ composer install ivolo/disposable-email-domains
 ```
 
 # Contributing
