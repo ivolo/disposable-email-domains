@@ -9,5 +9,21 @@
         	"email": "ivolodarsky@gmail.com",
         	"role": "Maintainer"
         }
-    ] 
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ivolo\\DisposableEmail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ivolo\\DisposableEmail\\Tests\\": "test/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --coverage-text"
+    }
 }
