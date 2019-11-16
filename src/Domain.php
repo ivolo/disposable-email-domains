@@ -7,17 +7,29 @@ class Domain
     protected static $wildcard;
     protected static $disposable;
 
+    /**
+     * Gets domain from email address.
+     *
+     * @param  string $email
+     *
+     * @return string
+     */
     public static function getDomain(string $email): string
     {
-        if (!strpos($email, '@')) {
+        if (!$pos = strpos($email, '@')) {
             throw new \InvalidArgumentException('Email should contain @ character in second or more position');
         }
 
-        $lastPart = strstr($email, '@');
-
-        return substr($lastPart, 1);
+        return substr($email, $pos + 1);
     }
 
+    /**
+     * Checks if given email's domain is disposable by wildcard.
+     *
+     * @param  string  $email
+     *
+     * @return bool
+     */
     public static function isWildcard(string $email): bool
     {
         $domain = static::getDomain($email);
@@ -36,6 +48,13 @@ class Domain
         return false;
     }
 
+    /**
+     * Checks if given email's domain is disposable.
+     *
+     * @param  string  $email
+     *
+     * @return bool
+     */
     public static function isDisposable(string $email, bool $wildcard = true): bool
     {
         if ($wildcard && static::isWildcard($email)) {
