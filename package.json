@@ -1,18 +1,19 @@
 {
   "name": "disposable-email-domains",
-  "version": "1.0.46",
+  "version": "1.0.52",
   "repository": "https://github.com/ivolo/disposable-email-domains.git",
   "license": "MIT",
   "main": "./index.json",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/_mocha",
-    "sort": "node sort.js"
+    "test": "mocha || true",
+    "add": "node add.js",
+    "prod": "node add.js && mocha || true"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-sorted": "^0.1.0",
-    "lodash": "^4.16.4",
-    "mocha": "^3.1.2",
+    "lodash": "^4.17.15",
+    "mocha": "^6.2.1",
     "validator": "^6.1.0"
   }
 }
