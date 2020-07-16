@@ -12,7 +12,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-sorted": "^0.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mocha": "^6.2.1",
     "validator": "^6.1.0"
   }
