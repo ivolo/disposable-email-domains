@@ -1,0 +1,41 @@
+name: Check version and publish package
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  compare_versions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check current package version
+        id: package_version
+        continue-on-error: false
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+          npm config set @npm:registry=https://npm.pkg.github.com/ 
+          package_version="$(npm view @${{ github.repository }} version)"
+          echo "::set-output name=version::$package_version"
+          echo $package_version
+        shell: bash
+      
+      - name: Check current repo version
+        id: repo_version
+        continue-on-error: false
+        run: |
+          repo_version="$(npm run env | grep npm_package_version | cut -d '=' -f 2)"
+          echo "::set-output name=version::$repo_version"
+          echo $repo_version
+        shell: bash
+
+      - name: Compare versions
+        id: compare_versions
+        if: steps.package_version.outputs.version != steps.repo_version.outputs.version
+        run: |
+          rm -rf package-lock.json
+          npm install  
+
+      - name: Publish package
+        if: steps.compare_versions.conclusion == 'Success'
+        run: npm publish
