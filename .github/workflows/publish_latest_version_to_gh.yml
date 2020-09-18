@@ -29,13 +29,7 @@ jobs:
           echo $repo_version
         shell: bash
 
-      - name: Compare versions
+      - name: Compare versions & Publish package
         id: compare_versions
         if: steps.package_version.outputs.version != steps.repo_version.outputs.version
-        run: |
-          rm -rf package-lock.json
-          npm install  
-
-      - name: Publish package
-        if: steps.compare_versions.conclusion == 'Success'
         run: npm publish
