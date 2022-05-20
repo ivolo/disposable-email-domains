@@ -14,10 +14,10 @@ var wildcards = require('disposable-email-domains/wildcard.json');
 
 ## API
 
-An always-up-to-date version of this repo is provided as an API by [Kickbox](https://kickbox.io/). Issuing a `GET` request to https://open.kickbox.io/v1/disposable/{DomainOrEmailAddress} will return `{"disposable":true}` or `{"disposable":false}` as a JSON response.
+An always-up-to-date version of this repo is provided as an API by [Kickbox](https://kickbox.com/). Issuing a `GET` request to https://open.kickbox.com/v1/disposable/{DomainOrEmailAddress} will return `{"disposable":true}` or `{"disposable":false}` as a JSON response.
 
 ```
-https://open.kickbox.io/v1/disposable/mailinator.com
+https://open.kickbox.com/v1/disposable/mailinator.com
 
 {"disposable":true}
 ```
@@ -33,7 +33,14 @@ $ component install ivolo/disposable-email-domains
 
 # Contributing
 
-Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json). Contributions should be in alphabetical order and lowercase. Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
+Add new disposable domains to [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard disposable domains to [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json).  
+
+To easily add new domains, insert them into [index.txt](https://github.com/ivolo/disposable-email-domains/blob/master/contributions/index.txt) and/or [wildcard.txt](https://github.com/ivolo/disposable-email-domains/blob/master/contributions/wildcard.txt) and run `npm run add`.  
+The domains will be added to the respective files and some validation will be made to ensure they pass the tests.
+
+Please run `npm run test` before creating a Pull Request to ensure all tests are passing.
+
+You can also run `npm run prod` to add new domains and run the tests at the same time.
 
 # License
 

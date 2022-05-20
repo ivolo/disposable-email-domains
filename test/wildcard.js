@@ -1,14 +1,13 @@
 const _ = require('lodash');
-const domains = require('../index');
+const domains = require('../wildcard');
 const chai = require('chai');
 const expect = chai.expect;
 
 chai.use(require("chai-sorted"));
 chai.use(require('./helpers/lowercase'));
 chai.use(require('./helpers/isFQDN'));
-chai.use(require('./helpers/notInWildcard'));
 
-describe('Domains', function(){
+describe('Wildcard domains', function(){
   it('should be an array', function(){
     expect(domains).to.be.a('array');
   });
@@ -26,8 +25,5 @@ describe('Domains', function(){
   });
   it('should be a valid domain', function(){
     expect(domains).to.be.all.isFQDN;
-  });
-  it('should not be a wildcard domain', function(){
-    expect(domains).to.be.all.notInWildcard;
   });
 });

@@ -2,7 +2,7 @@
   "name": "disposable-email-domains",
   "repo": "ivolo/disposable-email-domains",
   "description": "Get a list of disposable email domains.",
-  "version": "1.0.9",
+  "version": "1.0.59",
   "keywords": ["validate", "email", "disposable", "domains"],
   "license": "MIT",
   "files": ["index.json"],
