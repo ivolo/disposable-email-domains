@@ -1,12 +1,40 @@
 const _ = require('lodash');
-const domains = require('../index');
+const domains = require('../index.json');
 const chai = require('chai');
 const expect = chai.expect;
+const isFQDN = require('validator').isFQDN;
 
 chai.use(require("chai-sorted"));
-chai.use(require('./helpers/lowercase'));
-chai.use(require('./helpers/isFQDN'));
-chai.use(require('./helpers/notInWildcard'));
+
+/*
+  Check if all the elements are in lowercase
+*/
+chai.Assertion.addProperty('lowercase', function () {
+  var obj = this._obj, _this = this;
+  obj.forEach(function(o){
+    _this.assert(
+        o === o.toLowerCase()
+      , 'expected "' + o + '" to be all lowecase'
+      , 'expected "' + o + '" to not be all lowecase'
+    );
+  });
+
+});
+
+/*
+  Check if all the elements are valid domains
+*/
+chai.Assertion.addProperty('isFQDN', function () {
+  var obj = this._obj, _this = this;
+  obj.forEach(function(o){
+    _this.assert(
+        isFQDN(o)
+      , 'expected "' + o + '" to be a valid domain'
+      , 'expected "' + o + '" to not be all lowecase'
+    );
+  });
+
+});
 
 describe('Domains', function(){
   it('should be an array', function(){
@@ -26,8 +54,5 @@ describe('Domains', function(){
   });
   it('should be a valid domain', function(){
     expect(domains).to.be.all.isFQDN;
-  });
-  it('should not be a wildcard domain', function(){
-    expect(domains).to.be.all.notInWildcard;
   });
 });
