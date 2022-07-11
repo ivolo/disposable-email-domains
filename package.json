@@ -1,6 +1,6 @@
 {
   "name": "@npm/disposable-email-domains",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "repository": "https://github.com/npm/disposable-email-domains.git",
   "license": "MIT",
   "main": "./index.json",
