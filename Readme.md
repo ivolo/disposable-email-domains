@@ -16,7 +16,7 @@ function isValidEmail(email) {
   return [
     ...domains,
     ...wildcards,
-  ].some((domain) => email.endsWith(domain));
+  ].includes(email.split('@').pop());
 }
 ```
 
