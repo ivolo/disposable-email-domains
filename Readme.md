@@ -4,12 +4,27 @@ A list of [disposable email domains](http://en.wikipedia.org/wiki/Disposable_ema
 
 # Examples
 
-## Node.JS
+## Node.js
+
+Using ESM
+
+```js
+import domains from 'disposable-email-domains';
+import wildcards from 'disposable-email-domains/wildcard';
+
+function isValidEmail(email) {
+  return [
+    ...domains,
+    ...wildcards,
+  ].includes(email.split('@').pop());
+}
+```
+
+Or, using CommonJS:
+
 ```js
 var domains = require('disposable-email-domains');
 var wildcards = require('disposable-email-domains/wildcard.json');
-
-// ... your code here
 ```
 
 ## API
