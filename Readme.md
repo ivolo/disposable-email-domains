@@ -4,12 +4,34 @@ A list of [disposable email domains](http://en.wikipedia.org/wiki/Disposable_ema
 
 # Examples
 
-## Node.JS
+## Node.js
+
+Using ESM
+
+```js
+import domains from 'disposable-email-domains';
+import wildcards from 'disposable-email-domains/wildcard.js';
+
+console.log('number of domains', domains.length);
+console.log('number of wildcard domains', wildcards.length);
+
+export function isDisposableEmail(email) {
+  return [...domains, ...wildcards].some((domain) => {
+    return email.endsWith(domain);
+  });
+}
+
+console.log('abc@gmail.com disposable:', isDisposableEmail('abc@gmail.com')); // false
+console.log('def@mailinator.com disposable:', isDisposableEmail('def@mailinator.com')); // true
+```
+
+Demo: https://replit.com/@karlhorky/disposable-email-domains-Example#index.js
+
+Or, `require` using CommonJS:
+
 ```js
 var domains = require('disposable-email-domains');
 var wildcards = require('disposable-email-domains/wildcard.json');
-
-// ... your code here
 ```
 
 ## API
