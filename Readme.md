@@ -1,5 +1,9 @@
 # disposable-email-domains
 
+### This repo is no longer maintained. For an up-to-date list of disposable domains, use [tompec/disposable-email-domains](https://github.com/tompec/disposable-email-domains/)
+
+---
+
 A list of [disposable email domains](http://en.wikipedia.org/wiki/Disposable_email_address) like `mailinator.com`. You can use it to detect or block disposable accounts in your signup process. Exact domain matches are found in [index.json](https://github.com/ivolo/disposable-email-domains/blob/master/index.json) and wildcard domains (ex: `*.33mail.com`) are in [wildcard.json](https://github.com/ivolo/disposable-email-domains/blob/master/wildcard.json).
 
 # Examples
