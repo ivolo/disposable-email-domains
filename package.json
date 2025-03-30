@@ -3,7 +3,7 @@
   "version": "1.0.62",
   "repository": "https://github.com/ivolo/disposable-email-domains.git",
   "license": "MIT",
-  "main": "./index.json",
+  "main": "index.js",
   "scripts": {
     "test": "mocha || true",
     "add": "node add.js",
